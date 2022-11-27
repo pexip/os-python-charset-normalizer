@@ -1,0 +1,28 @@
+From: Carsten Schoenert <c.schoenert@t-online.de>
+Date: Sat, 26 Nov 2022 11:53:22 +0100
+Subject: docs: Prevent possible privacy issue to a linked image
+
+Remove a linkage to a GIF image that isn't really needed within the -doc
+package.
+
+Foreward: Not-Needed
+---
+ docs/index.rst | 5 -----
+ 1 file changed, 5 deletions(-)
+
+diff --git a/docs/index.rst b/docs/index.rst
+index 05d5f98..0762a03 100755
+--- a/docs/index.rst
++++ b/docs/index.rst
+@@ -11,11 +11,6 @@ All IANA character set names for which the Python core library provides codecs a
+ 
+ It aims to be as generic as possible.
+ 
+-.. image:: https://repository-images.githubusercontent.com/200259335/d3da9600-dedc-11e9-83e8-081f597505df
+-   :width: 500px
+-   :alt: CLI Charset Normalizer
+-   :align: right
+-
+ 
+ It is released under MIT license, see LICENSE for more
+ details. Be aware that no warranty of any kind is provided with this package.

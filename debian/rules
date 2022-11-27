@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+#export DH_VERBOSE=1
+
+include /usr/share/dpkg/pkg-info.mk
+
+BUILD_DATE  = $(shell LC_ALL=C date -u "+%d %B %Y" -d "@$(SOURCE_DATE_EPOCH)")
+SPHINXOPTS := -N -D html_last_updated_fmt="$(BUILD_DATE)"
+
+export PYBUILD_NAME=charset_normalizer
+export PYBUILD_BEFORE_TEST=cp -r {dir}/data {build_dir}
+export PYBUILD_AFTER_TEST=rm -rf {build_dir}/.coverage {build_dir}/data/
+
+%:
+	dh $@ --with=sphinxdoc --buildsystem=pybuild
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	PYTHONPATH=. python3 -m sphinx -b html $(SPHINXOPTS) docs/ $(CURDIR)/debian/python-charset-normalizer-doc/usr/share/doc/python-charset-normalizer-doc/html
+	rm $(CURDIR)/debian/python-charset-normalizer-doc/usr/share/doc/python-charset-normalizer-doc/html/.nojekyll
+	dh_sphinxdoc
+endif

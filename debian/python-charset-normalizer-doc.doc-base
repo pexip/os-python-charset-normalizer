@@ -1,0 +1,13 @@
+Document: charset-normalizer
+Title:  Documentation
+Author: Ahmed TAHRI @Ousret
+Abstract: A Library that helps you read text from unknown charset encoding by
+ assist you in finding what encoding suit the best to content.
+Section: Programming/Python
+
+Format: text
+Files: /usr/share/doc/python-charset-normalizer-doc/html/_sources/*.txt
+
+Format: HTML
+Index: /usr/share/doc/python-charset-normalizer-doc/html/index.html
+Files: /usr/share/doc/python-charset-normalizer-doc/html/*.html

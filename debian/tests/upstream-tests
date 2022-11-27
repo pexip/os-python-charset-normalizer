@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e -u
+
+cp -a charset_normalizer data setup.cfg tests "${AUTOPKGTEST_TMP}"
+
+for py3vers in $(py3versions -s); do
+    echo
+    echo "***************************"
+    echo "*** Testing with ${py3vers}"
+    echo "***************************"
+    echo
+    cd ${AUTOPKGTEST_TMP} && \
+        echo -e "Content of current working folder:\n" && \
+        ls -la && \
+        echo -e "Running tests...\n" && \
+        PYTHONPATH=. "${py3vers}" -m pytest tests && \
+        rm -rf .pytest_cache .coverage || exit 1
+done
+
+echo
+
+exit 0
