@@ -1,3 +1,9 @@
+python-charset-normalizer (3.0.1-2+pexip24u5) pexip-bookworm; urgency=medium
+
+  * New versioning scheme
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 01 Feb 2024 16:20:40 +0000
+
 python-charset-normalizer (3.0.1-2pexip4) pexip-bookworm; urgency=medium
 
   * Rebuild for override changes
