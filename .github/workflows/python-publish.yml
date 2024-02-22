@@ -169,7 +169,7 @@ jobs:
           CHARSET_NORMALIZER_USE_MYPYC: '0'
         run: python -m build
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: dist
@@ -226,7 +226,7 @@ jobs:
           CIBW_TEST_COMMAND: pytest -c {package} {package}/tests
           CIBW_SKIP: pp*
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: ./wheelhouse/*.whl
