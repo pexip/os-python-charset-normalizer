@@ -2,6 +2,6 @@
 # this represent the minimum requirement to build (for the optional speedup)
 mypy==0.990; python_version >= "3.7"
 mypy==0.971; python_version < "3.7"
-build==0.9.0
+build==1.0.3
 wheel==0.38.4; python_version >= "3.7"
 wheel==0.37.1; python_version < "3.7"
