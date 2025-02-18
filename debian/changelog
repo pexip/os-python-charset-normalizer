@@ -1,3 +1,85 @@
+python-charset-normalizer (3.4.1-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Tue, 18 Feb 2025 13:02:04 +0000
+
+python-charset-normalizer (3.4.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream version
+  * Refresh patches
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Wed, 23 Oct 2024 18:48:05 +0200
+
+python-charset-normalizer (3.3.2-4) unstable; urgency=medium
+
+  * Team upload.
+  * Add patch to make the build reproducible
+
+ -- Mattia Rizzolo <mattia@debian.org>  Thu, 19 Sep 2024 17:35:46 +0200
+
+python-charset-normalizer (3.3.2-3) unstable; urgency=medium
+
+  * Team upload.
+  * Break dependency loop (us→sphinx→requests→us).
+    Thank you Samuel Thibault <sthibault@debian.org>
+    & Adrian Bunk <bunk@debian.org> for the fixes.
+    Closes: #1078012
+  * Standards-Version: 4.7.0 (routine-update)
+  * Remove trailing whitespace in debian/copyright (routine-update)
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository, Repository-Browse, Security-Contact.
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Sat, 14 Sep 2024 10:54:30 +0200
+
+python-charset-normalizer (3.3.2-2) unstable; urgency=medium
+
+  * Team upload.
+  * Build binary versions using mypyc to increase performance; as
+    upstream does.
+
+ -- Michael R. Crusoe <crusoe@debian.org>  Sat, 03 Aug 2024 16:31:55 +0200
+
+python-charset-normalizer (3.3.2-1) unstable; urgency=medium
+
+  * Team upload
+  * [0a16ba1] New upstream version 3.3.2
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Fri, 24 Nov 2023 09:57:08 +0000
+
+python-charset-normalizer (3.3.0-1) unstable; urgency=medium
+
+  * Team upload
+  * [83780c6] New upstream version 3.3.0
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 21 Oct 2023 19:13:06 +0200
+
+python-charset-normalizer (3.2.0-1) unstable; urgency=medium
+
+  * Team upload
+  * [c1ef4ce] New upstream version 3.2.0
+  * [79ae4c0] d/control: Suggesting package python-charset-normalizer-doc
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sun, 23 Jul 2023 08:25:45 +0200
+
+python-charset-normalizer (3.1.0-2) unstable; urgency=medium
+
+  * Team upload
+  * Upload to unstable
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Fri, 23 Jun 2023 16:13:04 +0200
+
+python-charset-normalizer (3.1.0-1) experimental; urgency=medium
+
+  * Team upload
+  * New upstream version 3.1.0
+  * d/control: Bump Standards-Version to 4.6.2
+  * d/copyright: Update years of contributions
+  * d/control: Adding Rules-Requires-Root: no
+
+ -- Carsten Schoenert <c.schoenert@t-online.de>  Sat, 08 Apr 2023 08:30:59 +0200
+
 python-charset-normalizer (3.0.1-2) unstable; urgency=medium
 
   * Team upload

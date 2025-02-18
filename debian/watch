@@ -4,5 +4,5 @@ opts="mode=git, \
       compression=gz, \
       uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha)\.?\d*)$/$1~$2/, \
       dversionmangle=s/\+(dfsg|ds)(\.?\d+)?$//" \
-https://github.com/Ousret/charset_normalizer.git \
+https://github.com/jawah/charset_normalizer.git \
       refs/tags/@ANY_VERSION@

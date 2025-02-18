@@ -11,7 +11,7 @@ Foreward: Not-Needed
  1 file changed, 5 deletions(-)
 
 diff --git a/docs/index.rst b/docs/index.rst
-index 05d5f98..0762a03 100755
+index da8a9b6..c0c418b 100755
 --- a/docs/index.rst
 +++ b/docs/index.rst
 @@ -11,11 +11,6 @@ All IANA character set names for which the Python core library provides codecs a

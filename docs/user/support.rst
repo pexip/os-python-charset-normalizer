@@ -2,12 +2,20 @@
  Support
 =================
 
-Here are a list of supported encoding and supported language with latest update. Also this list
-may change depending of your python version.
+**If you are running:**
+
+- Python >=2.7,<3.5: Unsupported
+- Python 3.5: charset-normalizer < 2.1
+- Python 3.6: charset-normalizer < 3.1
+
+Upgrade your Python interpreter as soon as possible.
 
 -------------------
 Supported Encodings
 -------------------
+
+Here are a list of supported encoding and supported language with latest update. Also this list
+may change depending of your python version.
 
 Charset Normalizer is able to detect any of those encoding. This list is NOT static and depends heavily on what your
 current cPython version is shipped with. See https://docs.python.org/3/library/codecs.html#standard-encodings
@@ -104,7 +112,16 @@ utf_32           u32, utf32
 utf_32_be        utf_32be
 utf_32_le        utf_32le
 utf_8            u8, utf, utf8, utf8_ucs2, utf8_ucs4 (+utf_8_sig)
-utf_7*            u7, unicode-1-1-utf-7
+utf_7*           u7, unicode-1-1-utf-7
+cp720            N.A.
+cp737            N.A.
+cp856            N.A.
+cp874            N.A.
+cp875            N.A.
+cp1006           N.A.
+koi8_r           N.A.
+koi8_t           N.A.
+koi8_u           N.A.
 ===============  ===============================================================================================================================
 
 *: Only if a SIG/mark is found.
@@ -116,41 +133,51 @@ Supported Languages
 Those language can be detected inside your content. All of these are specified in ./charset_normalizer/assets/__init__.py .
 
 
-English,
-German,
-French,
-Dutch,
-Italian,
-Polish,
-Spanish,
-Russian,
-Japanese,
-Portuguese,
-Swedish,
-Chinese,
-Ukrainian,
-Norwegian,
-Finnish,
-Vietnamese,
-Czech,
-Hungarian,
-Korean,
-Indonesian,
-Turkish,
-Romanian,
-Farsi,
-Arabic,
-Danish,
-Serbian,
-Lithuanian,
-Slovene,
-Slovak,
-Malay,
-Hebrew,
-Bulgarian,
-Croatian,
-Hindi,
-Estonian,
-Thai,
-Greek,
-Tamil.
+| English,
+| German,
+| French,
+| Dutch,
+| Italian,
+| Polish,
+| Spanish,
+| Russian,
+| Japanese,
+| Portuguese,
+| Swedish,
+| Chinese,
+| Ukrainian,
+| Norwegian,
+| Finnish,
+| Vietnamese,
+| Czech,
+| Hungarian,
+| Korean,
+| Indonesian,
+| Turkish,
+| Romanian,
+| Farsi,
+| Arabic,
+| Danish,
+| Serbian,
+| Lithuanian,
+| Slovene,
+| Slovak,
+| Malay,
+| Hebrew,
+| Bulgarian,
+| Croatian,
+| Hindi,
+| Estonian,
+| Thai,
+| Greek,
+| Tamil.
+
+----------------------------
+Incomplete Sequence / Stream
+----------------------------
+
+It is not (yet) officially supported. If you feed an incomplete byte sequence (eg. truncated multi-byte sequence) the detector will
+most likely fail to return a proper result.
+If you are purposely feeding part of your payload for performance concerns, you may stop doing it as this package is fairly optimized.
+
+We are working on a dedicated way to handle streams.

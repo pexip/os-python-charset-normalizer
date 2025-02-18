@@ -8,12 +8,17 @@ Build-Depends:
  dh-sequence-python3,
  pybuild-plugin-pyproject,
  python3-all,
+ python3-all-dev,
+ python3-mypy,
  python3-pytest <!nocheck>,
  python3-pytest-cov <!nocheck>,
  python3-setuptools,
+ sphinx-common,
+Build-Depends-Indep:
  python3-sphinx,
- furo <!nodoc>,
-Standards-Version: 4.6.1
+ furo,
+Rules-Requires-Root: no
+Standards-Version: 4.7.0
 Homepage: https://github.com/ousret/charset_normalizer
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-charset-normalizer.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-charset-normalizer
@@ -37,10 +42,13 @@ Description: charset, encoding and language detection for Python (Documentation)
  This package contains the documentation.
 
 Package: python3-charset-normalizer
-Architecture: all
+Architecture: any
 Depends:
  ${misc:Depends},
  ${python3:Depends},
+ ${shlibs:Depends}
+Suggests:
+ python-charset-normalizer-doc,
 Description: charset, encoding and language detection (Python 3)
  charset-normalizer is a library for detection of charsets, encodings,
  and languages in Python programs. It can be compared to chardet, with

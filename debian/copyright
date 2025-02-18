@@ -4,7 +4,7 @@ Upstream-Contact: TAHRI Ahmed R.
 Source: https://github.com/ousret/charset_normalizer
 
 Files: *
-Copyright: 2019-2022, TAHRI Ahmed R.
+Copyright: 2019-2023, TAHRI Ahmed R.
 License: Expat
 
 Files: data/*
@@ -14,7 +14,7 @@ Comment: According to the file data/NOTICE.md.
 
 Files: debian/*
 Copyright: 2021, Dominik George <natureshadow@debia.org>
- 2022, Carsten Schoenert <c.schoenert@t-online.de>
+ 2022-2023, Carsten Schoenert <c.schoenert@t-online.de>
 License: Expat
 
 License: CC-BY-SA-3.0
@@ -22,7 +22,7 @@ License: CC-BY-SA-3.0
  SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT
  RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS"
  BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION
- PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE. 
+ PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE.
  .
  License
  .

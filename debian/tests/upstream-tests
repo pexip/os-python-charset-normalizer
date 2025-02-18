@@ -2,7 +2,7 @@
 
 set -e -u
 
-cp -a charset_normalizer data setup.cfg tests "${AUTOPKGTEST_TMP}"
+cp -a src data pyproject.toml tests "${AUTOPKGTEST_TMP}"
 
 for py3vers in $(py3versions -s); do
     echo
