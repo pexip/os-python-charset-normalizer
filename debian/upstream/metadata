@@ -1,7 +1,8 @@
 ---
-Bug-Database: https://github.com/Ousret/charset_normalizer/issues
-Bug-Submit: https://github.com/Ousret/charset_normalizer/issues/new
+Bug-Database: https://github.com/jawah/charset_normalizer/issues
+Bug-Submit: https://github.com/jawah/charset_normalizer/issues/new
 Documentation: https://charset-normalizer.readthedocs.io/en/latest
 FAQ: https://github.com/Ousret/charset_normalizer/blob/master/README.md
-Repository: https://github.com/ousret/charset_normalizer.git
-Repository-Browse: https://github.com/ousret/charset_normalizer
+Repository: https://github.com/jawah/charset_normalizer.git
+Repository-Browse: https://github.com/jawah/charset_normalizer
+Security-Contact: https://github.com/ousret/charset_normalizer/tree/HEAD/SECURITY.md

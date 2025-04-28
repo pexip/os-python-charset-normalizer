@@ -1,2 +1,3 @@
+mypyc-debug-symbols
 docs-Prevent-possible-privacy-issue-to-a-linked-image.patch
-pexip-0001-remove-furo.patch
+Make-the-build-reproducible-assure-stable-order-use-a-tup.patch

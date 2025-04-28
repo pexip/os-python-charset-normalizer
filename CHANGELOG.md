@@ -2,6 +2,95 @@
 All notable changes to charset-normalizer will be documented in this file. This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [3.4.1](https://github.com/Ousret/charset_normalizer/compare/3.4.0...3.4.1) (2024-12-24)
+
+### Changed
+- Project metadata are now stored using `pyproject.toml` instead of `setup.cfg` using setuptools as the build backend.
+- Enforce annotation delayed loading for a simpler and consistent types in the project.
+- Optional mypyc compilation upgraded to version 1.14 for Python >= 3.8
+
+### Added
+- pre-commit configuration.
+- noxfile.
+
+### Removed
+- `build-requirements.txt` as per using `pyproject.toml` native build configuration.
+- `bin/integration.py` and `bin/serve.py` in favor of downstream integration test (see noxfile).
+- `setup.cfg` in favor of `pyproject.toml` metadata configuration.
+- Unused `utils.range_scan` function.
+
+### Fixed
+- Converting content to Unicode bytes may insert `utf_8` instead of preferred `utf-8`. (#572)
+- Deprecation warning "'count' is passed as positional argument" when converting to Unicode bytes on Python 3.13+
+
+## [3.4.0](https://github.com/Ousret/charset_normalizer/compare/3.3.2...3.4.0) (2024-10-08)
+
+### Added
+- Argument `--no-preemptive` in the CLI to prevent the detector to search for hints.
+- Support for Python 3.13 (#512)
+
+### Fixed
+- Relax the TypeError exception thrown when trying to compare a CharsetMatch with anything else than a CharsetMatch.
+- Improved the general reliability of the detector based on user feedbacks. (#520) (#509) (#498) (#407) (#537)
+- Declared charset in content (preemptive detection) not changed when converting to utf-8 bytes. (#381)
+
+## [3.3.2](https://github.com/Ousret/charset_normalizer/compare/3.3.1...3.3.2) (2023-10-31)
+
+### Fixed
+- Unintentional memory usage regression when using large payload that match several encoding (#376)
+- Regression on some detection case showcased in the documentation (#371)
+
+### Added
+- Noise (md) probe that identify malformed arabic representation due to the presence of letters in isolated form (credit to my wife)
+
+## [3.3.1](https://github.com/Ousret/charset_normalizer/compare/3.3.0...3.3.1) (2023-10-22)
+
+### Changed
+- Optional mypyc compilation upgraded to version 1.6.1 for Python >= 3.8
+- Improved the general detection reliability based on reports from the community
+
+## [3.3.0](https://github.com/Ousret/charset_normalizer/compare/3.2.0...3.3.0) (2023-09-30)
+
+### Added
+- Allow to execute the CLI (e.g. normalizer) through `python -m charset_normalizer.cli` or `python -m charset_normalizer`
+- Support for 9 forgotten encoding that are supported by Python but unlisted in `encoding.aliases` as they have no alias (#323)
+
+### Removed
+- (internal) Redundant utils.is_ascii function and unused function is_private_use_only
+- (internal) charset_normalizer.assets is moved inside charset_normalizer.constant
+
+### Changed
+- (internal) Unicode code blocks in constants are updated using the latest v15.0.0 definition to improve detection
+- Optional mypyc compilation upgraded to version 1.5.1 for Python >= 3.8
+
+### Fixed
+- Unable to properly sort CharsetMatch when both chaos/noise and coherence were close due to an unreachable condition in \_\_lt\_\_ (#350)
+
+## [3.2.0](https://github.com/Ousret/charset_normalizer/compare/3.1.0...3.2.0) (2023-06-07)
+
+### Changed
+- Typehint for function `from_path` no longer enforce `PathLike` as its first argument
+- Minor improvement over the global detection reliability
+
+### Added
+- Introduce function `is_binary` that relies on main capabilities, and optimized to detect binaries
+- Propagate `enable_fallback` argument throughout `from_bytes`, `from_path`, and `from_fp` that allow a deeper control over the detection (default True)
+- Explicit support for Python 3.12
+
+### Fixed
+- Edge case detection failure where a file would contain 'very-long' camel cased word (Issue #289)
+
+## [3.1.0](https://github.com/Ousret/charset_normalizer/compare/3.0.1...3.1.0) (2023-03-06)
+
+### Added
+- Argument `should_rename_legacy` for legacy function `detect` and disregard any new arguments without errors (PR #262)
+
+### Removed
+- Support for Python 3.6 (PR #260)
+
+### Changed
+- Optional speedup provided by mypy/c 1.0.1
+
 ## [3.0.1](https://github.com/Ousret/charset_normalizer/compare/3.0.0...3.0.1) (2022-11-18)
 
 ### Fixed
@@ -113,7 +202,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [2.0.12](https://github.com/Ousret/charset_normalizer/compare/2.0.11...2.0.12) (2022-02-12)
 
 ### Fixed
-- ASCII miss-detection on rare cases (PR #170) 
+- ASCII miss-detection on rare cases (PR #170)
 
 ## [2.0.11](https://github.com/Ousret/charset_normalizer/compare/2.0.10...2.0.11) (2022-01-30)
 
@@ -145,7 +234,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - MD improvement on trailing data and long foreign (non-pure latin) data (PR #124)
 - Efficiency improvements in cd/alphabet_languages from [@adbar](https://github.com/adbar) (PR #122)
 - call sum() without an intermediary list following PEP 289 recommendations from [@adbar](https://github.com/adbar) (PR #129)
-- Code style as refactored by Sourcery-AI (PR #131) 
+- Code style as refactored by Sourcery-AI (PR #131)
 - Minor adjustment on the MD around european words (PR #133)
 - Remove and replace SRTs from assets / tests (PR #139)
 - Initialize the library logger with a `NullHandler` by default from [@nmaynes](https://github.com/nmaynes) (PR #135)
@@ -218,7 +307,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [2.0.2](https://github.com/Ousret/charset_normalizer/compare/2.0.1...2.0.2) (2021-07-15)
 ### Fixed
-- Empty/Too small JSON payload miss-detection fixed. Report from [@tseaver](https://github.com/tseaver) (PR #59) 
+- Empty/Too small JSON payload miss-detection fixed. Report from [@tseaver](https://github.com/tseaver) (PR #59)
 
 ### Changed
 - Don't inject unicodedata2 into sys.modules from [@akx](https://github.com/akx) (PR #57)
