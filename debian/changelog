@@ -1,3 +1,10 @@
+python-charset-normalizer (3.4.2-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release.
+
+ -- Colin Watson <cjwatson@debian.org>  Mon, 05 May 2025 11:40:18 +0100
+
 python-charset-normalizer (3.4.1-1) unstable; urgency=medium
 
   * Team upload.
