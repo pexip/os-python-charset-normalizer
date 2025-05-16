@@ -9,10 +9,10 @@ Signed-off-by: Mattia Rizzolo <mattia@debian.org>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/charset_normalizer/md.py b/src/charset_normalizer/md.py
-index 9ed59a8..868a0aa 100644
+index 12ce024..9f002be 100644
 --- a/src/charset_normalizer/md.py
 +++ b/src/charset_normalizer/md.py
-@@ -340,7 +340,7 @@ class SuperWeirdWordPlugin(MessDetectorPlugin):
+@@ -341,7 +341,7 @@ class SuperWeirdWordPlugin(MessDetectorPlugin):
              self._buffer_accent_count = 0
              self._buffer_glyph_count = 0
          elif (
